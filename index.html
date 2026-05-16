@@ -15,7 +15,7 @@
 }
 body{font-family:'Press Start 2P',monospace;background:var(--sky);color:var(--white);overflow-x:hidden;cursor:default}
 /* ── NAV HUD ── */
-#hud{position:fixed;top:0;left:0;right:0;z-index:100;background:#000;border-bottom:3px solid var(--mario-yellow);padding:8px 20px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;font-size:9px;}
+#hud{position:fixed;top:0;left:0;right:0;z-index:100;background:#000;border-bottom:3px solid var(--mario-yellow);padding:6px 20px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;font-size:9px;}
 .hud-block{display:flex;flex-direction:column;gap:4px;align-items:center}
 .hud-left{display:flex;justify-content:flex-start;align-items:center;}
 .hud-center{display:flex;justify-content:center;align-items:center;}
@@ -26,7 +26,7 @@ body{font-family:'Press Start 2P',monospace;background:var(--sky);color:var(--wh
 .nav-btn{background:none;border:2px solid transparent;color:#aaa;font-family:'Press Start 2P',monospace;font-size:7px;padding:5px 8px;cursor:pointer;transition:.1s}
 .nav-btn:hover,.nav-btn.active{border-color:var(--mario-yellow);color:var(--mario-yellow)}
 /* ── PAGES ── */
-.page{display:none;min-height:100vh;padding-top:52px}
+.page{display:none;min-height:100vh;padding-top:80px}
 .page.active{display:block}
 /* ── SOUND TOGGLE ── */
 .sound-toggle{
@@ -133,9 +133,9 @@ body{font-family:'Press Start 2P',monospace;background:var(--sky);color:var(--wh
 .platform::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:3px;background:#6b1a00}
 .year-tag{background:var(--mario-green);color:#fff;font-size:6px;padding:3px 8px;border-radius:2px;display:inline-block;margin-bottom:8px}
 /* ── SCROLLING GROUND ── */
-.ground-scene{height:80px;background:#2d1810;border-top:4px solid var(--coin);position:relative;overflow:hidden}
-.ground-tiles{display:flex;position:absolute;bottom:0;animation:scrollGround 8s linear infinite}
-.gt{width:48px;height:48px;background:#5c3d11;border:2px solid #3d2800;flex-shrink:0}
+.ground-scene{height:52px;position:relative;overflow:hidden;background:transparent;}
+.ground-tiles{ display:flex;position:absolute;bottom:0;left:0;animation:scrollGround 8s linear infinite;}
+.gt{width:48px;height:48px;background:#5c3d11;border:2px solid #3d2800;border-top:4px solid var(--coin);flex-shrink:0;}
 @keyframes scrollGround{from{transform:translateX(0)}to{transform:translateX(-96px)}}
 /* ── PAGE CONTAINER ── */
 .page-inner{max-width:900px;margin:0 auto;padding:40px 20px}
@@ -199,24 +199,7 @@ body{font-family:'Press Start 2P',monospace;background:var(--sky);color:var(--wh
     <span class="hud-label">PLAYER</span>
     <span class="hud-val">AYUSH</span>
   </div>
-  <div class="hud-block">
-  <span class="hud-label">SOUND</span>
-
-  <div class="sound-toggle on" onclick="toggleSound()">
-    <div class="toggle-knob"></div>
-  </div>
 </div>
-  <div id="nav-links">
-    <button class="nav-btn active" onclick="goPage('home')">HOME</button>
-    <button class="nav-btn" onclick="goPage('about')">ABOUT</button>
-    <button class="nav-btn" onclick="goPage('edu')">EDUCATION</button>
-    <button class="nav-btn" onclick="goPage('work')">WORK</button>
-    <button class="nav-btn" onclick="goPage('projects')">PROJECTS</button>
-  </div>
-  <div class="hud-block">
-    <span class="hud-label">SCORE</span>
-    <span class="hud-val" id="score">000000</span>
-  </div>
 </div>
 
 <!-- ══════════════ HOME ══════════════ -->
